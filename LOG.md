@@ -22,6 +22,9 @@
 - Pianificata la futura pubblicazione del repository GitHub pubblico `zotpush-md`, con sorgenti, release XPI, aggiornamenti automatici e CI.
 - Pianificato un annuncio early preview nei Zotero Forums dopo la pubblicazione del repository, per rendere verificabili codice, licenza e garanzia read-only.
 - Salvata una bozza dell'annuncio community in `COMMUNITY_ANNOUNCEMENT.md`.
+- Rinominato il plugin e il pacchetto in **ZotPush MD**; prodotta la versione `0.3.0` come `dist/zotpush-md-0.3.0.xpi`.
+- Creato il repository GitHub privato `paolovolterra/Zotpush` con ramo predefinito `main`.
+- Pubblicato il commit iniziale con sorgenti, test, audit read-only, documentazione, licenza MIT e bozza dell'annuncio community; gli artefatti `dist/` e le XPI restano esclusi da Git.
 
 ### Migliorie pianificate
 
