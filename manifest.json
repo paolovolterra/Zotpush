@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "ZotPush MD",
+  "version": "0.3.0",
+  "description": "Push read-only di riferimenti, note, evidenze e immagini da Zotero a Markdown con YAML.",
+  "author": "Papo",
+  "homepage_url": "https://example.com/zotero-obsidian-readonly",
+  "applications": {
+    "zotero": {
+      "id": "zotero-obsidian-readonly@example.com",
+      "update_url": "https://example.com/zotero-obsidian-readonly/updates.json",
+      "strict_min_version": "9.0",
+      "strict_max_version": "9.0.*"
+    }
+  }
+}

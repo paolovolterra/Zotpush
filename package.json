@@ -1,0 +1,10 @@
+{
+  "name": "zotpush-md",
+  "private": true,
+  "version": "0.3.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/core.test.js && bash scripts/audit-readonly.sh",
+    "build": "bash scripts/build.sh"
+  }
+}
