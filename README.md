@@ -31,6 +31,12 @@ b8ef61825b64896bc0f6282d94aacbc8fd2365910e4b8f3b85b99e99d2f73ec6
 
 Verificarlo con `sha256sum zotpush-md-0.3.1.xpi` su Linux, `shasum -a 256 zotpush-md-0.3.1.xpi` su macOS o `Get-FileHash .\zotpush-md-0.3.1.xpi -Algorithm SHA256` in PowerShell. Il feed [updates.json](updates.json) contiene lo stesso hash. Una XPI costruita localmente può avere un hash diverso per i metadati dell'archivio ZIP: quello sopra identifica il file della release.
 
+La versione 0.3.1 è archiviata anche su [Zenodo](https://doi.org/10.5281/zenodo.22901556), DOI `10.5281/zenodo.22901556`. Il deposito contiene la XPI installabile e uno ZIP separato con sorgenti, test e script di compilazione. SHA-256 di `zotpush-md-source-v0.3.1.zip`:
+
+```text
+9255052fbb0c6fa236c86fc21829b21313f689405be69178457df4598516e733
+```
+
 1. In Zotero: **Strumenti → Componenti aggiuntivi → ingranaggio → Installa componente aggiuntivo da file**.
 2. Selezionare la XPI locale o quella scaricata.
 3. Selezionare uno o più riferimenti bibliografici.
