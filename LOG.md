@@ -1,5 +1,10 @@
 # Log di sviluppo
 
+## 2026-09-22
+
+- Preparata la pubblicazione della versione 0.3.1 già presente nel worktree: supporto dichiarato a Zotero 9/10, immagini di annotazione con link Markdown relativi, test e audit sola lettura. Sostituiti gli URL provvisori del manifest con homepage e feed aggiornamenti GitHub; documentate installazione, privacy e complementarità con zlb. Su richiesta dell'utente, il README presenta per primo il build locale con `npm test` e `npm run build`, senza dipendenze npm. La verifica dal vivo nell'interfaccia di Zotero 10 resta distinta dai test automatici.
+- Inserito lo SHA-256 dell'artefatto XPI 0.3.1 nel README, nell'annuncio community e in `updates.json`; il valore identifica il download della release, mentre il build locale può produrre uno ZIP con metadati diversi.
+
 ## 2026-08-26
 
 - Scelto il nome definitivo **ZotPush MD**, che descrive il flusso `Zotero → Markdown` senza legare il plugin a Obsidian.
@@ -25,6 +30,23 @@
 - Rinominato il plugin e il pacchetto in **ZotPush MD**; prodotta la versione `0.3.0` come `dist/zotpush-md-0.3.0.xpi`.
 - Creato il repository GitHub privato `paolovolterra/Zotpush` con ramo predefinito `main`.
 - Pubblicato il commit iniziale con sorgenti, test, audit read-only, documentazione, licenza MIT e bozza dell'annuncio community; gli artefatti `dist/` e le XPI restano esclusi da Git.
+
+## 2026-08-28
+
+- Verificato con quale strumento è stato costruito il plugin/XPI: **Codex CLI**, non Claude Code.
+  - `~/.codex/sessions/2026/08/26/` — sessioni Codex del 26-ago citano il path `20260826_XPI/dist/zotero-obsidian-readonly-0.1.0.xpi` e la stringa "private repository Zotpush"; `~/.codex/history.jsonl` contiene 6 hit su `zotpush|xpi`. Stessa data dei commit (`3585ecf` 08:25, `127c21c` 09:12 del 26-ago).
+  - La directory di sessione Claude Code `~/.claude/projects/-home-papo-notebooks-ClaudeCode-2026-202608-20260826-XPI/` è stata creata solo il 28-ago (prima sessione Claude Code su questo progetto = questa verifica).
+  - I commit non hanno il trailer `Co-Authored-By: Claude` che Claude Code aggiunge quando committa.
+- Resi esplicitamente relativi al Markdown i collegamenti alle immagini esportate: `./assets/zotero-CHIAVE/IMMAGINE.png`.
+- Aggiornati il test del formatter e il README per documentare la scelta dei percorsi relativi; `npm test` e audit read-only superati.
+- Ricostruita e verificata l'integrità di `dist/zotpush-md-0.3.0.xpi`.
+- Creato `AGENTS.md` come contesto operativo persistente per le future sessioni Codex, con scopo, architettura, vincoli, comandi e stato del progetto.
+- Verificato che i wikilink relativi `![[./assets/...]]` funzionano in Obsidian ma non nelle anteprime di code-server e nei rendering HTML; adottata quindi la sintassi Markdown portabile `![](./assets/...)`.
+
+## 2026-08-29
+
+- Estesa a Zotero 10.0.x la compatibilità dichiarata nel manifest, mantenendo Zotero 9.0.x come versione minima.
+- Incrementata la versione del plugin a `0.3.1` e aggiornata la documentazione della compatibilità.
 
 ### Migliorie pianificate
 

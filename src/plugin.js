@@ -103,7 +103,7 @@ var ZoteroObsidianReadonlyPlugin = class ZoteroObsidianReadonlyPlugin {
         const position = typeof data.annotationPosition === "string"
           ? JSON.parse(data.annotationPosition || "{}") : (data.annotationPosition || {});
         let imageSourcePath = "";
-        if (data.annotationType === "image" &&
+        if (["image", "ink"].includes(data.annotationType) &&
             await this.Zotero.Annotations.hasCacheImage(annotation)) {
           imageSourcePath = this.Zotero.Annotations.getCacheImagePath(annotation);
         }
@@ -146,7 +146,7 @@ var ZoteroObsidianReadonlyPlugin = class ZoteroObsidianReadonlyPlugin {
   }
 
   async writeMarkdown(directory, model) {
-    const assetRelativeDir = `assets/zotero-${model.key}`;
+    const assetRelativeDir = `./assets/zotero-${model.key}`;
     const assetDir = PathUtils.join(directory, "assets", `zotero-${model.key}`);
     for (const annotation of model.annotations) {
       if (!annotation.imageSourcePath) continue;

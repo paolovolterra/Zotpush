@@ -88,8 +88,8 @@ var ZoteroObsidianCore = (() => {
         out.push(`### ${kind}${page}`);
         if (annotation.text) out.push(`> ${text(annotation.text).replace(/\n/g, "\n> ")}`);
         if (annotation.comment) out.push(text(annotation.comment));
-        if (annotation.imagePath) out.push(`![[${annotation.imagePath}]]`);
-        else if (annotation.type === "image") out.push("_Immagine non disponibile nella cache locale di Zotero._");
+        if (annotation.imagePath) out.push(`![](${annotation.imagePath})`);
+        else if (["image", "ink"].includes(annotation.type)) out.push("_Immagine non disponibile nella cache locale di Zotero._");
         if (annotation.tags?.length) out.push(`Tag: ${annotation.tags.map(t => `#${text(t).replace(/\s+/g, "-")}`).join(" ")}`);
         if (annotation.openURI) out.push(`[Apri in Zotero](<${annotation.openURI}>)`);
       });

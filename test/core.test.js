@@ -8,8 +8,11 @@ const item = {
   ISBN: "", url: "https://example.test", collections: ["Ricerca"], tags: ["evidenza"],
   zoteroURI: "zotero://select/library/items/ABCD1234", abstract: "Abstract",
   notes: [], annotations: [{
-    type: "image", pageLabel: "3", imagePath: "assets/zotero-ABCD1234/IMAGE01.png",
+    type: "image", pageLabel: "3", imagePath: "./assets/zotero-ABCD1234/IMAGE01.png",
     openURI: "zotero://open-pdf/library/items/PDFKEY01?page=3&annotation=IMAGE01"
+  }, {
+    type: "ink", pageLabel: "4",
+    openURI: "zotero://open-pdf/library/items/PDFKEY01?page=4&annotation=INK01"
   }]
 };
 
@@ -17,8 +20,9 @@ const first = core.merge("", item, "2026-08-26T00:00:00Z");
 assert.match(first, /^---\nzotero_item_key: "ABCD1234"/);
 assert.match(first, /title: "Titolo: prova"/);
 assert.match(first, /## Note personali/);
-assert.match(first, /!\[\[assets\/zotero-ABCD1234\/IMAGE01\.png\]\]/);
+assert.match(first, /!\[\]\(\.\/assets\/zotero-ABCD1234\/IMAGE01\.png\)/);
 assert.match(first, /\[Apri in Zotero\]\(<zotero:\/\/open-pdf\/library\/items\/PDFKEY01\?page=3&annotation=IMAGE01>\)/);
+assert.match(first, /Immagine non disponibile nella cache locale di Zotero/);
 
 const manual = first + "\nQuesta parte è mia.\n";
 const updated = core.merge(manual, { ...item, title: "Titolo aggiornato" }, "2026-08-27T00:00:00Z");

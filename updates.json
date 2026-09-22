@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "zotero-obsidian-readonly@example.com": {
+      "updates": [
+        {
+          "version": "0.3.1",
+          "update_link": "https://github.com/paolovolterra/Zotpush/releases/download/v0.3.1/zotpush-md-0.3.1.xpi",
+          "update_hash": "sha256:b8ef61825b64896bc0f6282d94aacbc8fd2365910e4b8f3b85b99e99d2f73ec6",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "9.0",
+              "strict_max_version": "10.0.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
