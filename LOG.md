@@ -4,6 +4,7 @@
 
 - Preparata la pubblicazione della versione 0.3.1 già presente nel worktree: supporto dichiarato a Zotero 9/10, immagini di annotazione con link Markdown relativi, test e audit sola lettura. Sostituiti gli URL provvisori del manifest con homepage e feed aggiornamenti GitHub; documentate installazione, privacy e complementarità con zlb. Su richiesta dell'utente, il README presenta per primo il build locale con `npm test` e `npm run build`, senza dipendenze npm. La verifica dal vivo nell'interfaccia di Zotero 10 resta distinta dai test automatici.
 - Inserito lo SHA-256 dell'artefatto XPI 0.3.1 nel README, nell'annuncio community e in `updates.json`; il valore identifica il download della release, mentre il build locale può produrre uno ZIP con metadati diversi.
+- Repository `paolovolterra/Zotpush` reso pubblico; pubblicata la release GitHub [v0.3.1](https://github.com/paolovolterra/Zotpush/releases/tag/v0.3.1) come preview. Download anonimo della XPI verificato: SHA-256 `b8ef61825b64896bc0f6282d94aacbc8fd2365910e4b8f3b85b99e99d2f73ec6`, identico a README, feed e digest GitHub. Le note locali `20260826_XPI.md` e `DEBUG_NOTES.md` restano fuori dal repository.
 
 ## 2026-08-26
 
