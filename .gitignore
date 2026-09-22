@@ -3,3 +3,6 @@ node_modules/
 *.xpi
 *.tmp
 .DS_Store
+AGENTS.md
+COMMUNITY_ANNOUNCEMENT.md
+LOG.md
