@@ -75,7 +75,7 @@ ZotPush MD non trasmette contenuti della libreria e non contiene telemetria. Zot
 
 ## Sorgente e aggiornamenti
 
-Il [repository GitHub](https://github.com/paolovolterra/Zotpush) è pubblico. Le release contengono la XPI installabile; `updates.json` indica a Zotero il file e l'hash SHA-256 della versione disponibile. Il plugin è una preview: segnalazioni e proposte possono essere aperte nelle [Issues](https://github.com/paolovolterra/Zotpush/issues).
+Il [repository GitHub](https://github.com/paolovolterra/Zotpush) è pubblico. Le release contengono la XPI installabile; `updates.json` indica a Zotero il file e l'hash SHA-256 della versione disponibile. La versione 0.5.2 è stata provata dal vivo in Zotero 10; con Zotero 9 la compatibilità è dichiarata ma non provata per questa versione. Segnalazioni e proposte possono essere aperte nelle [Issues](https://github.com/paolovolterra/Zotpush/issues).
 
 ## Sviluppo
 
