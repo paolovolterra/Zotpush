@@ -12,6 +12,17 @@
               "strict_max_version": "10.0.*"
             }
           }
+        },
+        {
+          "version": "0.5.2",
+          "update_link": "https://github.com/paolovolterra/Zotpush/releases/download/v0.5.2/zotpush-md-0.5.2.xpi",
+          "update_hash": "sha256:79e66b942d0abe93430715b6fdd18a98e6aec5fc0b84f7d6dae15f1050406c10",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "9.0",
+              "strict_max_version": "10.0.*"
+            }
+          }
         }
       ]
     }

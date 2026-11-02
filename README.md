@@ -2,7 +2,7 @@
 
 Plugin XPI per fare push degli elementi bibliografici selezionati da Zotero verso file Markdown autonomi con frontmatter YAML, note, annotazioni e immagini. I file possono essere usati con Obsidian o con qualsiasi altro strumento compatibile con Markdown.
 
-Versione corrente: 0.3.1.
+Versione corrente: 0.5.2.
 
 ## Garanzia fondamentale
 
@@ -19,30 +19,34 @@ npm test
 npm run build
 ```
 
-`npm test` esegue i test del formatter e l'audit statico delle chiamate mutative verso Zotero. `npm run build` crea `dist/zotpush-md-0.3.1.xpi`. Il progetto non ha dipendenze npm da installare e non richiede `npm install`. L'audit è una verifica del sorgente fornito: leggere anche il codice se serve una valutazione indipendente.
+`npm test` esegue i test del formatter e l'audit statico delle chiamate mutative verso Zotero. `npm run build` crea la XPI corrispondente alla versione indicata in `package.json`. Il progetto non ha dipendenze npm da installare e non richiede `npm install`. L'audit è una verifica del sorgente fornito: leggere anche il codice se serve una valutazione indipendente.
 
-In alternativa, scaricare la XPI già costruita dalla [release GitHub](https://github.com/paolovolterra/Zotpush/releases/tag/v0.3.1).
+In alternativa, scaricare la XPI già costruita dalla [release GitHub](https://github.com/paolovolterra/Zotpush/releases/tag/v0.5.2).
 
-SHA-256 della XPI distribuita (`zotpush-md-0.3.1.xpi`):
-
-```text
-b8ef61825b64896bc0f6282d94aacbc8fd2365910e4b8f3b85b99e99d2f73ec6
-```
-
-Verificarlo con `sha256sum zotpush-md-0.3.1.xpi` su Linux, `shasum -a 256 zotpush-md-0.3.1.xpi` su macOS o `Get-FileHash .\zotpush-md-0.3.1.xpi -Algorithm SHA256` in PowerShell. Il feed [updates.json](updates.json) contiene lo stesso hash. Una XPI costruita localmente può avere un hash diverso per i metadati dell'archivio ZIP: quello sopra identifica il file della release.
-
-La versione 0.3.1 è archiviata anche su [Zenodo](https://doi.org/10.5281/zenodo.22901556), DOI `10.5281/zenodo.22901556`. Il deposito contiene la XPI installabile e uno ZIP separato con sorgenti, test e script di compilazione. SHA-256 di `zotpush-md-source-v0.3.1.zip`:
+SHA-256 della XPI distribuita (`zotpush-md-0.5.2.xpi`):
 
 ```text
-9255052fbb0c6fa236c86fc21829b21313f689405be69178457df4598516e733
+79e66b942d0abe93430715b6fdd18a98e6aec5fc0b84f7d6dae15f1050406c10
 ```
+
+Verificarlo con `sha256sum zotpush-md-0.5.2.xpi` su Linux, `shasum -a 256 zotpush-md-0.5.2.xpi` su macOS o `Get-FileHash .\zotpush-md-0.5.2.xpi -Algorithm SHA256` in PowerShell. Il feed [updates.json](updates.json) contiene lo stesso hash. Una XPI costruita localmente può avere un hash diverso per i metadati dell'archivio ZIP: quello sopra identifica il file della release.
+
+Ogni versione è archiviata anche su [Zenodo](https://doi.org/10.5281/zenodo.22901555), DOI `10.5281/zenodo.22901555` (rimanda sempre alla versione più recente). Il deposito contiene la XPI installabile e uno ZIP separato con sorgenti, test e script di compilazione; lo stesso ZIP è allegato alla release GitHub con il relativo SHA-256.
 
 1. In Zotero: **Strumenti → Componenti aggiuntivi → ingranaggio → Installa componente aggiuntivo da file**.
 2. Selezionare la XPI locale o quella scaricata.
-3. Selezionare uno o più riferimenti bibliografici.
+3. Selezionare uno o più riferimenti bibliografici oppure i relativi PDF allegati; gli allegati vengono ricondotti automaticamente alla fonte bibliografica.
 4. Usare **Strumenti → Push selezione in Markdown…** oppure fare clic destro sulla selezione e scegliere **Push selezione in Markdown…**.
 
-Il nome del file include la chiave Zotero per evitare collisioni. Le riesportazioni sostituiscono YAML e blocco generato, preservando tutto ciò che segue il marcatore finale. Se un file omonimo non contiene i marcatori del plugin, l'esportazione si ferma senza sovrascriverlo.
+Per estrarre soltanto alcune evidenze dalle fonti selezionate, usare **Push evidenze filtrate in Markdown…**. A differenza del push ordinario, questo comando riunisce tutte le fonti selezionate in un solo dossier `Evidenze Zotero - FILTRO.md`. Il filtro accetta:
+
+- un nome di colore Zotero, per esempio `gray` (è accettato anche `grey`);
+- il colore esadecimale, per esempio `#aaaaaa`;
+- un tag dell'annotazione nel formato `tag:zlb-citazione`.
+
+Il filtro proposto automaticamente è `tag:zlb-citazione`. Il confronto dei tag non distingue maiuscole e minuscole ed è esatto. Le fonti selezionate senza annotazioni corrispondenti vengono escluse dal dossier. Lasciando vuoto il filtro vengono esportate tutte le annotazioni. Ogni evidenza mantiene nel Markdown testo, commento, pagina, tutti i propri tag, collegamento Zotero e colore originale; vengono conservati anche gli altri tag della fonte e le sue note Zotero.
+
+Con una sola fonte, il push ordinario crea il consueto file bibliografico. Con più fonti selezionate, le riunisce invece nel dossier unico `Fonti Zotero - selezione.md`, comprendendo abstract, note ed evidenze. Le riesportazioni sostituiscono YAML e blocco generato, preservando tutto ciò che segue il marcatore finale. Se un file omonimo non contiene i marcatori del plugin, l'esportazione si ferma senza sovrascriverlo.
 
 Il file Markdown prende il nome dal titolo dell'elemento Zotero, ripulito dai caratteri non validi per il filesystem, seguito dalla chiave Zotero:
 
@@ -50,7 +54,7 @@ Il file Markdown prende il nome dal titolo dell'elemento Zotero, ripulito dai ca
 Titolo Zotero - CHIAVE.md
 ```
 
-## Limiti della versione 0.3.1
+## Limiti della versione 0.5.2
 
 - Esporta solo gli elementi selezionati manualmente.
 - La citation key viene letta dal campo disponibile o dalla riga `Citation Key:` di Extra (compatibile con Better BibTeX quando presente).

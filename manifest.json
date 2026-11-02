@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ZotPush MD",
-  "version": "0.3.1",
+  "version": "0.5.2",
   "description": "Push read-only di riferimenti, note, evidenze e immagini da Zotero a Markdown con YAML.",
   "author": "Papo",
   "homepage_url": "https://github.com/paolovolterra/Zotpush",
