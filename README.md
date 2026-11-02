@@ -2,7 +2,16 @@
 
 Plugin XPI per fare push degli elementi bibliografici selezionati da Zotero verso file Markdown autonomi con frontmatter YAML, note, annotazioni e immagini. I file possono essere usati con Obsidian o con qualsiasi altro strumento compatibile con Markdown.
 
-Versione corrente: 0.5.2.
+Versione corrente: 0.5.2 ([release](https://github.com/paolovolterra/Zotpush/releases/tag/v0.5.2), [Zenodo](https://doi.org/10.5281/zenodo.23875777)).
+
+## Novità della 0.5.2
+
+- **Push evidenze filtrate in Markdown…**: nuovo comando che estrae dalle fonti selezionate solo le annotazioni di un colore (`gray`, `#aaaaaa`) o con un tag (`tag:zlb-citazione`, filtro predefinito) e le riunisce in un unico dossier `Evidenze Zotero - FILTRO.md`.
+- **Dossier unico per selezioni multiple**: il push ordinario di più fonti produce `Fonti Zotero - selezione.md`, con abstract, note ed evidenze di tutte; una sola fonte mantiene il proprio file.
+- **Selezione più flessibile**: scegliendo un PDF, una nota o un'annotazione, ZotPush risale alla fonte bibliografica madre; le fonti duplicate vengono esportate una sola volta.
+- **Contesto conservato**: colore, tag, pagina, collegamento `zotero://` e commento di ogni evidenza, più tag e note Zotero della fonte.
+- **Menu affidabili**: i comandi compaiono sia in Strumenti sia nel clic destro, registrati in modo indipendente.
+- Provata dal vivo in Zotero 10; vincolo di sola lettura verso Zotero invariato.
 
 ## Garanzia fondamentale
 
