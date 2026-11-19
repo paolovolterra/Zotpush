@@ -2,6 +2,8 @@
 
 [English](README.md) · **Italiano**
 
+![zlb e ZotPush: ponte Zotero ↔ LLM ed esportazione Zotero → Markdown](assets/zlb-zotpush-landscape.png)
+
 Plugin XPI per fare push degli elementi bibliografici selezionati da Zotero verso file Markdown autonomi con frontmatter YAML, note, annotazioni e immagini. I file possono essere usati con Obsidian o con qualsiasi altro strumento compatibile con Markdown.
 
 Versione corrente: 0.5.2 ([release](https://github.com/paolovolterra/Zotpush/releases/tag/v0.5.2), [Zenodo](https://doi.org/10.5281/zenodo.23875777)).
